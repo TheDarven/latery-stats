@@ -1,0 +1,19 @@
+.partie-equipe .color-4{
+	background-color: rgba(190,0,0,1);
+	border-bottom: 5px solid rgba(210,20,20,1);
+}
+
+.partie-equipe .color-6{
+	background-color: rgba(217,163,52,1);
+	border-bottom: 5px solid rgba(237,183,72,1);
+}
+
+.partie-equipe .color-9{
+	background-color: rgba(63,63,253,1);
+	border-bottom: 5px solid rgba(83,83,253,1);
+}
+
+.partie-equipe .color-b{
+	background-color: rgba(63,216,253,1);
+	border-bottom: 5px solid rgba(83,236,253,1);
+}

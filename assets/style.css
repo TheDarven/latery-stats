@@ -1,0 +1,409 @@
+a, a:hover, a:link, a:visited, a:active{
+	color: inherit;
+	text-decoration: inherit;
+	border: none;
+}
+
+.badge-dark{
+	padding-bottom: 4px;
+}
+
+/* HEADER */
+.categorie-navigation{
+	height: 100%;
+    top: 0px;
+    position: absolute;
+}
+
+.categorie-navigation > div{
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+}
+
+.categorie-navigation > div > nav{
+	margin-top: -5px;
+	text-align: center;
+}
+
+.categorie-navigation > div > nav img{
+	height: 60px;
+}
+
+.categorie-navigation > div > nav > a:nth-child(4){
+	position: relative;
+	top: 5px;
+}
+
+.categorie-navigation > div > nav .navbar-nav{
+	margin: auto;
+	font-size: 25px;
+}
+
+.banniere{
+	margin-top: 70px;
+	width: 100%;
+	height: 500px; 
+	background-image: url('images/banner.png'); 
+	/* background-position: 50% 250%; */ 
+	background-position: bottom; 
+	background-attachment: fixed; 
+	box-shadow: inset 0 -5px rgba(253,250,250,0.3);
+}
+
+.banniere > div{
+	position: relative;
+	top: 100px;
+}
+
+.banniere > div > h1{
+	font-size: 120px; 
+	text-align: center; 
+	color: white; 
+	text-shadow: rgba(0, 0, 0, 0.298039) 0px 5px 0px; 
+	font-family: Helvetica;
+}
+
+.banniere > div > h4{
+	font-size: 35px;
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+/* GLOBAL SITE */
+.categorie-texte{
+	margin-top: 40px;
+}
+
+.categorie-texte h2{
+	font-size: 40px;
+	font-family: Trebuchet MS, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.categorie-texte p{
+	font-size: 18px;
+	text-align: justify;
+}
+
+@media (max-width: 575px){
+	.categorie-texte p{
+		text-align: center;
+	}
+}
+
+
+/* JOUEURS */
+.players-select img{
+	transition: 0.5s;
+	border-radius: 3px;
+}
+.players-select img:hover{
+	transform: scale(1.2);	
+}
+
+a span.popup {
+    position: absolute;
+    top: 0;
+    margin-top: -36px;
+    display: block;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: #EEE;
+    background: rgba(0, 0, 0, .9);
+    padding: 6px 15px;
+    border-radius: 3px;
+    transform: scale(0) rotate(-12deg);
+    transition: all .25s;
+    opacity: 0;
+    z-index: 2;
+    font-size: 13px;
+}
+
+a span.popup:hover{
+	display: none;
+}
+
+span.popup::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid rgba(0,0,0,.9);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
+a:hover span.popup, a:focus span.popup {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+}
+
+#myTable{
+	margin: auto;
+	margin-bottom: 10px;
+	vertical-align: middle;
+}
+
+	#myTable img{
+		height: 48px;
+		border-radius: 3px;
+	}
+
+th.sort{
+	position: relative;
+}
+
+
+th.sort:after{
+	font-family: 'Font Awesome 5 Free';
+	content: "\f0dd";
+    right: 16px;
+    font-size: 1rem;
+    position: absolute;
+    bottom: .7em;
+    display: block;
+    opacity: .3;
+}
+
+th.sort:before{
+	right: 1em;
+    content: "\f0de";
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1rem;
+    position: absolute;
+    bottom: .7em;
+    display: block;
+    opacity: .3;
+}
+
+th.sort.after:after{
+	opacity: 1;
+}
+
+th.sort.before:before{
+	opacity: 1;
+}
+
+.page-link{
+	color: black;
+}
+
+.page-item.active .page-link{
+	background-color: #212529;
+	border-color: #212529;
+}
+
+.page-link:hover{
+	color: inherit;
+}
+
+/* PARTIES */
+.categorie-partie{
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.categorie-partie .container{
+	padding: 0px;
+}
+
+.categorie-partie .row{
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.categorie-partie .partie-list, .categorie-partie .partie-equipe{
+	margin-bottom: 20px;
+	transition: 0.5s;
+}
+
+.categorie-partie .partie-list:hover{
+	transform: scale(1.1);
+}
+
+.categorie-partie .partie-top{
+	background-color: #1E252F;
+	color: white;
+	margin: 0px 10px;
+	border-bottom: 4px solid #fa9f01;
+	padding: 5px;
+	text-align: center;
+}
+
+.categorie-partie .partie-top h3{
+	font-family: 'Arial', sans-serif;
+	font-size: 21px;
+	padding-top: 5px;
+}
+
+.categorie-partie .partie-top h4{
+	font-family: 'Arial', sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.3px;
+	color: #E9E9E9;
+}
+
+.categorie-partie .partie-main{
+	margin: 0px 10px;
+	background-color: #FAFAFA;
+	border: 1px solid #CECECE;
+	border-radius: 0px 0px 5px 5px;
+	padding: 4px 5px;
+}
+
+.categorie-partie .partie-main div{
+	padding: 5px 0px;
+}
+
+.categorie-partie .partie-main .indicateur{
+	font-family: Geneva, sans-serif;
+	font-size: 16px;
+}
+
+.categorie-partie .partie-main .valeur{
+	float: right;
+	margin-top: 4px;
+}
+
+.partie-equipe .partie-top img{
+	display: block;
+	position: absolute;
+	right: 40px; 
+	top: 6px;
+	height: 32px;
+}
+.partie-equipe{
+	padding: 0px;
+}
+
+.partie-equipe .partie-top{
+	background-color: rgba(63,63,253,1);
+	border-bottom: 5px solid rgba(83,83,253,1);
+}
+
+.partie-equipe h3{
+	margin-bottom: 5px;
+}
+
+.partie-equipe .partie-main .ligne-joueur{
+	padding: 5px 10px;
+}
+
+.partie-equipe .partie-main img{
+	height: 48px;
+}
+
+.partie-equipe .partie-main .joueur-taupe{
+	position: absolute;
+	margin-left: 5px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-family: Trebuchet MS, sans-serif;
+}
+
+.partie-equipe .partie-main .indicateur{
+	margin-left: 5px;
+}
+
+.partie-equipe .partie-main .valeur{
+	position: absolute;
+	right: 40px;
+}
+
+
+/* PROFIL */
+.carte-partie span.popup {
+    position: absolute;
+    top: 0;
+    margin-top: -36px;
+    display: block;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: #EEE;
+    background: rgba(0, 0, 0, .9);
+    padding: 6px 15px;
+    border-radius: 3px;
+    transform: scale(0) rotate(-12deg);
+    transition: all .25s;
+    opacity: 0;
+    z-index: 2;
+    font-size: 13px;
+    width: 160px;
+}
+
+.carte-partie span.popup:hover{
+	display: none;
+}
+
+.carte-partie:hover span.popup, .carte-partie:focus span.popup {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+}
+
+.carte{
+	margin: 8px;
+    z-index: 1;
+    opacity: 1;
+    position: relative;
+    display: inline-block; 
+	margin: 0px 5px 5px 5px; 
+	background: url('images/roles/villageois.svg');
+	width: 64px;
+	height: 64px;
+	border-radius: 10px;
+}
+
+.nombre{
+	position: absolute;
+	right: -2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transform: translateX(-4%) translateY(-4%);
+    transform: translateX(-4%) translateY(-4%);
+    z-index: 2;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: 500;
+    font-size: .875rem;
+    text-align: center;
+    background-color: #1E252F;
+    border-radius: 1000px;
+    -webkit-transition: all .3s cubic-bezier(.215,.61,.355,1);
+    transition: all .3s cubic-bezier(.215,.61,.355,1);
+}
+
+.separation-profil{
+	border-bottom: 1px solid #eee;
+	padding-bottom: 9px;
+	margin: 40px 0 10px;
+	font-size: 18px;
+}
+
+.statistiques-profil > div{
+	padding: 0px;
+	text-align: center;
+}
+
+.statistiques-profil > div > h5{
+	font-size: 12px;
+	color: #a9a9a9;
+	margin-bottom: 0px;
+	font-weight: bold;
+}

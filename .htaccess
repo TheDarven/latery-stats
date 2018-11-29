@@ -1,0 +1,13 @@
+RewriteEngine On
+Options -MultiViews
+
+RewriteRule ^index([^/]+) index.php
+RewriteRule ^joueurs([^/]+) joueurs.php
+RewriteRule ^taupegun([^/]+) taupegun.php
+RewriteRule ^taupegun/([0-9]+)$ taupegun.php?id_partie=$1
+RewriteRule ^loupgarou([^/]+) loupgarou.php
+RewriteRule ^loupgarou/([0-9]+)$ loupgarou.php?id_partie=$1
+RewriteRule ^profile/([a-zA-Z0-9-_]+)$ profile.php?pseudo=$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
