@@ -13,15 +13,17 @@
 			if($equipe->mort == 0){
 				return $equipe->nom;
 			}
-			$sql = $db->prepare('SELECT * FROM site_taupe WHERE id_partie = ?');
-			$sql->execute(array($id));
-			while($joueur = $sql->fetch(PDO::FETCH_OBJ)) {
-				if($joueur->mort == 0){
-					if($joueur->supertaupe != 0){
-						return 'Supertaupe '.$joueur->supertaupe;
-					}else{
-						return 'Taupe '.$joueur->taupe;
-					}
+		}
+		$sql->closeCursor();
+
+		$sql = $db->prepare('SELECT * FROM site_taupe WHERE id_partie = ?');
+		$sql->execute(array($id));
+		while($joueur = $sql->fetch(PDO::FETCH_OBJ)) {
+			if($joueur->mort == 0){
+				if($joueur->supertaupe != 0){
+					return 'Supertaupe '.$joueur->supertaupe;
+				}else{
+					return 'Taupe '.$joueur->taupe;
 				}
 			}
 		}
@@ -41,7 +43,7 @@
 			if($role->nom != "Loup garou blanc" && $role->mort == 0){
 				$loupblanc = false;
 			}
-			if($role->nom != "Loup garou" && $role->nom != "Infecte pere des loups" && $role->infecte == 0 && $role->mort == 0){
+			if($role->nom != "Loup garou" && $role->nom != "Infect père des loups" && $role->infecte == 0 && $role->mort == 0){
 				$loup = false;
 			}
 			if($role->couple == 0 && $role->mort == 0){
