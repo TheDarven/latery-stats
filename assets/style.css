@@ -158,6 +158,7 @@ a:hover span.popup, a:focus span.popup {
 
 th.sort{
 	position: relative;
+	padding-right: 0;
 }
 
 
@@ -193,6 +194,11 @@ th.sort.before:before{
 
 .page-link{
 	color: black;
+}
+
+.page-item{
+	min-width: 43px;
+	text-align: center;
 }
 
 .page-item.active .page-link{

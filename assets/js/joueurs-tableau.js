@@ -1,4 +1,4 @@
-var page = 1, nbrPage = 1;
+var page = 1, nbrPage = 1, joueurParPage = 15, maxPage = 10;
 function sortTable(n) {
 	var table, rows, th, sort = 0;
 	table = document.getElementById("myTable");
@@ -24,15 +24,23 @@ function sortTable(n) {
 	if(rows.length > 2){
 		for(i=2; i<rows.length; i++){
 			for(j=i; j<rows.length; j++){
+				value_1 = rows[i].getElementsByTagName("td")[n].innerHTML.toLowerCase();
+				value_2 = rows[j].getElementsByTagName("td")[n].innerHTML.toLowerCase();
+
+				if(n != 2){
+					value_1 = parseInt(value_1);
+					value_2 = parseInt(value_2);
+				}
+
 				if(sort == 1){
-					if(rows[i].getElementsByTagName("td")[n].innerHTML.toLowerCase() < rows[j].getElementsByTagName("td")[n].innerHTML.toLowerCase()){
+					if(value_1 < value_2){
 						rows[i].parentNode.insertBefore(rows[j], rows[i]);
 					}
 				}else{
-					if(rows[i].getElementsByTagName("td")[n].innerHTML.toLowerCase() > rows[j].getElementsByTagName("td")[n].innerHTML.toLowerCase()){
+					if(value_1 > value_2){
 						rows[i].parentNode.insertBefore(rows[j], rows[i]);
 					}
-				}
+				}	
 			}
 		}
 		reloadTable();
@@ -43,8 +51,8 @@ function reloadTable(){
 	var table, rows, min, max;
 	table = document.getElementById("myTable");
 	rows = table.rows;
-	min = 2+((page-1)*15);
-	max = 2+(page*15);
+	min = 2+((page-1)*joueurParPage);
+	max = 2+(page*joueurParPage);
 
 	if(rows.length > 2){
 		for(i=2; i<rows.length; i++){
@@ -63,8 +71,8 @@ function changePage(n){
 	table = document.getElementById("myTable");
 	rows = table.rows;
 	if(rows.length > 2){
-		min = 2+((n-1)*15);
-		max = 2+(n*15);
+		min = 2+((n-1)*joueurParPage);
+		max = 2+(n*joueurParPage);
 		if(max > rows.length){
 			max = rows.length;
 		}
@@ -93,6 +101,31 @@ function changePage(n){
 	}else{
 		li[nbrPage+1].setAttribute("onClick","changePage("+nbrPage+")");
 	}
+
+	// 1 à 5, changer normalement
+	// 20 à 25 same
+
+	for(i=1; i<nbrPage+1; i++){
+		if(n < maxPage/2+1){
+			if(i<maxPage+2){
+				li[i].setAttribute("style","display: block;");
+			}else{
+				li[i].setAttribute("style","display: none;");
+			}
+		}else if(n > nbrPage-maxPage/2){
+			if(i>nbrPage-maxPage-1){
+				li[i].setAttribute("style","display: block;");
+			}else{
+				li[i].setAttribute("style","display: none;");
+			}
+		}else{
+			if(i<n-maxPage/2 || i>n+maxPage/2){
+				li[i].setAttribute("style","display: none;");
+			}else{
+				li[i].setAttribute("style","display: block;");
+			}
+		}
+	}
 }
 
 window.onload = function(){
@@ -103,11 +136,17 @@ window.onload = function(){
 	table = document.getElementById("myTable");
 	rows = table.rows;
 	taille = rows.length-2;
-	nbrPage = (taille-(taille%15))/15+1;
+	nbrPage = (taille-(taille%joueurParPage))/joueurParPage;
+	if(taille%joueurParPage > 0){
+		nbrPage++;
+	}
 	if(nbrPage > 1){
 		for(i=2; i<nbrPage+1; i++){
 			newli = document.createElement('li');
             newli.setAttribute('class','page-item');
+            if(i>maxPage+1){
+            	 newli.setAttribute('style','display: none;');
+            }
             newli.innerHTML = "<span class=\"page-link\">"+i+"</span>";
             newli.setAttribute('onClick','changePage('+i+')');
 

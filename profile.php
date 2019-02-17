@@ -303,7 +303,14 @@ $sql->closeCursor();
 										</div>
 										<div class="col-lg-6 col-md-12 col-sm-6 col-6">
 											<h5>Temps de jeu</h5>
-											<p><?php echo round($joueur->time_play/60); ?>min</p>
+											<p>
+												<?php $timeplay = $joueur->time_play/60;
+												if($timeplay < 60){
+													echo(round($timeplay)."min");
+												}else{
+													echo(round($timeplay/60)."h");
+												} ?>
+											</p>
 										</div>
 										<div class="col-lg-6 col-md-12 col-sm-6 col-6">
 											<h5>Dernière connexion</h5>
