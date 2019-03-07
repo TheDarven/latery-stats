@@ -1,5 +1,7 @@
 	<?php $page = "joueurs";
 	include('modele/header.php'); ?>
+	<script src="<?= WebSite_Url ?>/assets/js/joueurs-recherche.js"></script>
+	<script src="<?= WebSite_Url ?>/assets/js/joueurs-tableau.js"></script>
 			<div class="d-flex justify-content-center flex-wrap categorie-texte">
 				<div class="col-lg-6 col-md-6 col-sm-11">
 					<h2>Les joueurs</h2>
@@ -40,7 +42,7 @@
 						<tr class="d-none d-lg-table-row">
 							<th data-sort="0">Position</th>
 							<th data-sort="0">Tête</th>
-							<th onclick="sortTable(2)" data-sort="0" class="sort after" style="min-width: 132px;">Pseudo</th>
+							<th onclick="sortTable(2)" data-sort="0" class="sort after" style="min-width: 160px;">Pseudo</th>
 							<th onclick="sortTable(3)" data-sort="0" class="sort" style="min-width: 75px;">Kills</th>
 							<th onclick="sortTable(4)" data-sort="0" class="sort" style="min-width: 90px;">Morts</th>
 							<th onclick="sortTable(5)" data-sort="0" class="sort" style="min-width: 110px;">Victoires</th>
@@ -97,6 +99,4 @@
 			</div>
 		</div>
 	<?php include('modele/footer.php'); ?>
-	<script src="<?= WebSite_Url ?>/assets/js/joueurs-recherche.js"></script>
-	<script src="<?= WebSite_Url ?>/assets/js/joueurs-tableau.js"></script>
 </html>

@@ -58,7 +58,11 @@ if(isset($_GET['id_partie'])){
 																						</span>
 																					<?php } ?>
 																					<span class="indicateur"><?php echo $joueur->pseudo; ?></span>
-																					<span class="badge badge-dark valeur"><?php echo $taupe->kills; ?> kills</span>
+																					<span class="badge badge-dark valeur"
+																						<?php if($taupe->mort == 0){ ?>
+																							style="background-color: #1BA12A;" 
+																						<?php } ?>
+																					><?php echo $taupe->kills; ?> kills</span>
 																				</div> 
 																			</a>
 																		</div>
@@ -98,6 +102,7 @@ if(isset($_GET['id_partie'])){
 					</div>
 				<?php }
 				$sql->closeCursor();
+
 			}else{ ?>
 				<div class="d-flex justify-content-center flex-wrap categorie-texte">
 					<div class="col-lg-6 col-md-6 col-sm-11">
