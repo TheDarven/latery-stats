@@ -15,7 +15,7 @@ include('modele/header.php'); ?>
 				<div class="col-lg-6 col-md-6 col-sm-11 col-xs-11">
 					<div class="container">
 						<div class="row">
-							<?php $sql = $db->prepare('SELECT * FROM site_partie WHERE type = ? ORDER BY id DESC LIMIT 1');
+							<?php $sql = $db->prepare('SELECT * FROM site_partie WHERE type = ? ORDER BY id DESC LIMIT 2');
 							$sql->execute(array("taupegun"));
 							while($partie = $sql->fetch(PDO::FETCH_OBJ)) { 
 								if($partie->type == "taupegun"){ ?>

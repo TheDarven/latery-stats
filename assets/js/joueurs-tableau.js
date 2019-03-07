@@ -1,4 +1,4 @@
-var page = 1, nbrPage = 1;
+var page = 1, nbrPage = 1, taillePage = 15;
 function sortTable(n) {
 	var table, rows, th, sort = 0;
 	table = document.getElementById("myTable");
@@ -43,8 +43,8 @@ function reloadTable(){
 	var table, rows, min, max;
 	table = document.getElementById("myTable");
 	rows = table.rows;
-	min = 2+((page-1)*15);
-	max = 2+(page*15);
+	min = 2+((page-1)*taillePage);
+	max = 2+(page*taillePage);
 
 	if(rows.length > 2){
 		for(i=2; i<rows.length; i++){
@@ -63,8 +63,8 @@ function changePage(n){
 	table = document.getElementById("myTable");
 	rows = table.rows;
 	if(rows.length > 2){
-		min = 2+((n-1)*15);
-		max = 2+(n*15);
+		min = 2+((n-1)*taillePage);
+		max = 2+(n*taillePage);
 		if(max > rows.length){
 			max = rows.length;
 		}
@@ -103,7 +103,10 @@ window.onload = function(){
 	table = document.getElementById("myTable");
 	rows = table.rows;
 	taille = rows.length-2;
-	nbrPage = (taille-(taille%15))/15+1;
+	nbrPage = (taille-(taille%taillePage))/taillePage;
+	if(taille%taillePage != 0){
+		nbrPage++;
+	}
 	if(nbrPage > 1){
 		for(i=2; i<nbrPage+1; i++){
 			newli = document.createElement('li');
