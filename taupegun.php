@@ -102,6 +102,7 @@ if(isset($_GET['id_partie'])){
 					</div>
 				<?php }
 				$sql->closeCursor();
+
 			}else{ ?>
 				<div class="d-flex justify-content-center flex-wrap categorie-texte">
 					<div class="col-lg-6 col-md-6 col-sm-11">
