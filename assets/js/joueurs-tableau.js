@@ -1,4 +1,4 @@
-var page = 1, nbrPage = 1, joueurParPage = 15, maxPage = 10;
+var page = 1, nbrPage = 1, joueurParPage = 3, maxPage = 10;
 function sortTable(n) {
 	var table, rows, th, sort = 0;
 	table = document.getElementById("myTable");
