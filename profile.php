@@ -15,7 +15,7 @@ if($sql->rowCount() == 0){
 	$core->Redirect(WebSite_Url);
 }else{
 	$uuid = $sql->fetch(PDO::FETCH_OBJ)->uuid;
-	$cache = 'cache/profile'.$uuid.'.txt';
+	/* $cache = 'cache/profile'.$uuid.'.txt';
 	$expire = time() - 86400;
 	if(!(file_exists($cache) && filemtime($cache) > $expire)){
 		$new_pseudo = $core->getPseudo(str_replace("-", "", $uuid));
@@ -32,9 +32,9 @@ if($sql->rowCount() == 0){
 		    file_put_contents($cache, $page) ; // on écrit la chaîne précédemment récupérée ($page) dans un fichier ($cache)
 		    $core->Redirect(WebSite_Url."/profile/".urlencode($new_pseudo));
 		}
-	}
+	} */
 }
-$sql->closeCursor();
+			$sql->closeCursor();
 			$sql = $db->prepare('SELECT * FROM site_joueur WHERE uuid = ?');
 			$sql->execute(array($uuid));
 			while($joueur = $sql->fetch(PDO::FETCH_OBJ)) { ?>
